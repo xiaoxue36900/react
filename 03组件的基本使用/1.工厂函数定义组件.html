@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工厂函数定义组件</title>
+
+</head>
+<body>
+  <!-- 容器 -->
+<div id="test"></div>
+  <!-- 引入react核心库 -->
+  <script type="text/javascript" src="../js/react.development.js"></script>
+  <!-- 引入react-dom库，react使用该库操纵dom -->
+  <script type="text/javascript" src="../js/react-dom.development.js"></script>
+  <!-- 引入babel，，将jsx代码转换成就是代码,让浏览器识别 -->
+<script type="text/javascript" src="../js/babel.min.js"></script>
+  <!-- 必须改成babel, 告诉babel将标签里的jsx转化成js-->
+  <script type="text/babel">
+  
+  // 使用工厂函数定义组件
+  function Demo(){
+    console.log(this);
+    return <h2>这是工厂函数定义组件(简单组件用我去定义)</h2>
+  }
+  // 渲染组件标签
+  ReactDOM.render(<Demo/>,document.getElementById('test'))
+  </script>
+</body>
+</html>

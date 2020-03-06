@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>类组件的三大属性之state</title>
+</head>
+<body>
+  <!-- 容器 -->
+  <div id="test"></div>
+  <!-- 引入react核心库 -->
+  <script type="text/javascript" src="../js/react.development.js"></script>
+  <!-- 引入react-dom库,react靠该库操作dom -->
+  <script type="text/javascript" src="../js/react-dom.development.js"></script>
+  <!-- 引入babel,将jsx代码转换成js代码,让浏览器识别 -->
+  <script type="text/javascript" src="../js/babel.min.js"></script>
+  <!-- 必须改成babel,告诉babel将标签里jsx转化成js -->
+  <script type="text/babel">
+  // 定义组件
+  class Weather extends React.Component{
+    // 构造器
+    constructor(...params){
+      super(...params)
+      this.state={isHot:ture}
+    }
+    render(){
+      return <h2 >今天天气很{ this.state.isHot ? "炎热" : "凉爽"}</h2>
+    }
+  }
+function changeHot(params){
+
+}
+  
+  // 渲染组件标签
+  ReactDOM.render(<Weather/>,document.getElementById('test'))
+  
+  </script>
+</body>
+</html>

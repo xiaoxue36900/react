@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES6类定义组件</title>
+</head>
+<body>
+  <!-- 容器 -->
+  <div id="test"></div>
+  <!-- 引入react核心库 -->
+  <script type="text/javascript" src="../js/react.development.js"></script>
+  <!-- 引入react-dom库,react使用该库操作dom -->
+  <script type="text/javascript" src="../js/react-dom.development.js"></script>
+  <!-- 引入babel,将jsx代码转化成js代码,让浏览页面识别 -->
+  <script type="text/javascript" src="../js/babel.min.js"></script>
+  <!-- 必须改成babel,告诉babel将标签里的jsx转化成js -->
+  <script type="text/babel">
+  // 使用ES6里的类定义组件(复杂组件用此方法)
+  class Demo extends React.Component{
+  //下面的render是放在Demo的原型上的
+  render(){
+    // 该render和ReactDOM.render不是一个render.没有关系,仅仅只是同名
+    console.log(this);
+    // 这里的this值Demo的实列
+    return <h2>我是ES6类定义的组件(复杂组件用这种定义)</h2>
+  } 
+  }
+// 渲染组件标签
+ReactDOM.render(<Demo/>,document.getElementById('test'))
+  
+  
+  </script>
+</body>
+</html>
